@@ -3,6 +3,12 @@
     text-align: center;
 }
 
+.product-sale {
+    background: green;
+    color: white;
+    font-size: 1rem;
+}
+
 @media (max-width: 768px) {
     .login-form {
         width: 70%;
