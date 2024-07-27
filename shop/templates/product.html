@@ -1,11 +1,11 @@
 {% extends "base.html" %} {% block content %}
 
 <div class="container">
-  <div class="card mb-3" style="max-width: 540px">
+  <div class="card mb-3">
     <div class="row g-0">
-      <div class="col-md-4">
+      <div class="col-md-2">
         {% if product.is_sale %}
-        <div>
+        <div style="text-align: center;">
           <p
             style="
               background: green;
@@ -41,6 +41,19 @@
             <small class="text-body-secondary"> {{ product.price }} </small>
           </p>
           {% endif %}
+          <div class="row justify-content-center">
+            <div class="col-md-2"> Quantity: </div>
+            <div class="col-md-2">
+              <select class="form-select form-select-sm" id="quantity-cart">
+                
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+          </div>
           <button type="button" value="{{ product.id }}" class="btn btn-primary" id="add-cart"> Add to Cart </button>
         </div>
       </div>
@@ -56,6 +69,7 @@
       url: '{% url 'cart_add' %}',
       data: {
         product_id: $('#add-cart').val(),
+        product_quantity: $('#quantity-cart option:selected').text(),
         csrfmiddlewaretoken: '{{ csrf_token }}',
         action: 'post'
       },

@@ -46,3 +46,7 @@
 - Created connection to Product and Cart Summary from ./shop/templates/product.html
 - Cart icon number change at ./shop/templates/navbar.html
 - Temporary .gitattributes added
+
+### Version 0.7
+- Update Cart option enabled at ./cart/templates/cart_summary.html
+- Bugs at ./cart/urls.py and ./cart/views.py
