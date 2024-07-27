@@ -33,3 +33,16 @@
 - Product and Category views at ./store/views.py
 - README.md added
 - (Caution): Github branch change and random deletions due to false upload of github directory
+
+### Version 0.6
+- Store App changed to Shop App (./store is now ./shop)
+- Changed setting for Cart App recongize
+- Created cart models at ./cart/models/py
+- Created contexts for cart logics at ./cart/context_processor.py
+- Created URLs for cart at ./cart/urls.py
+- Created Cart class with attributes of the Cart App at ./cart/cart.py
+- Created the views for Cart at ./cart/views.py
+- Cart summary template at ./cart/templates/cart_summary.html
+- Created connection to Product and Cart Summary from ./shop/templates/product.html
+- Cart icon number change at ./shop/templates/navbar.html
+- Temporary .gitattributes added
