@@ -51,3 +51,8 @@
 - Update Cart option enabled at ./cart/templates/cart_summary.html
 - Bugs at ./cart/urls.py and ./cart/views.py
 - Delete Item option enabled at ./cart/templates/cart_summary.html
+
+### Version 0.8
+- Total price indicator of Cart products
+- Category routing page ./store/category_summary.py
+- Messages for cart functions (for adding updating and deleting) at ./cart
