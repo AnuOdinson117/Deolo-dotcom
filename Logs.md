@@ -50,3 +50,4 @@
 ### Version 0.7
 - Update Cart option enabled at ./cart/templates/cart_summary.html
 - Bugs at ./cart/urls.py and ./cart/views.py
+- Delete Item option enabled at ./cart/templates/cart_summary.html
