@@ -56,3 +56,10 @@
 - Total price indicator of Cart products
 - Category routing page ./store/category_summary.py
 - Messages for cart functions (for adding updating and deleting) at ./cart
+
+### Version 0.9
+- User account addition.
+- User changes in Name (first and last), Email and Username.
+- Password changes authentication activated.
+- Template for User Account at ./shop/templates/
+- Changes for in ./shop/forms.py

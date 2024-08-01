@@ -10,10 +10,11 @@
                 <li class="nav-item"><a style="font-size: 1.2rem;" class="nav-link" href="{% url "about" %}"> About </a></li>
 
                 {% if user.is_authenticated %}
+                <li class="nav-item"><a style="font-size: 1.2rem;" class="nav-link" href="{% url "update_user" %}"> Profile </a></li>
                 <li class="nav-item"><a style="font-size: 1.2rem;" class="nav-link" href="{% url "logout" %}"> Sign Out </a></li>
                 {% else %}
-                <li class="nav-item"><a style="font-size: 1.2rem;" class="nav-link" href="{% url "login" %}"> Sign In </a></li>
-                <li class="nav-item"><a style="font-size: 1.2rem;" class="nav-link" href="{% url "register" %}"> Sign Up </a></li>
+                    <li class="nav-item"><a style="font-size: 1.2rem;" class="nav-link" href="{% url "login" %}"> Sign In </a></li>
+                    <li class="nav-item"><a style="font-size: 1.2rem;" class="nav-link" href="{% url "register" %}"> Sign Up </a></li>
                 {% endif %}
                 
                 <li class="nav-item dropdown">
