@@ -63,3 +63,11 @@
 - Password changes authentication activated.
 - Template for User Account at ./shop/templates/
 - Changes for in ./shop/forms.py
+
+### Version 0.10
+- Extended User Profile for address and locations.
+- Created new form at ./shop/forms.py.
+- Changed navbar style for Profile parts at ./shop/templates/navbar.html.
+- New User model created at ./shop/models.py.
+- Changes made to admin dashboard via ./shop/admin.py.
+- Migrations for the new Profile model.

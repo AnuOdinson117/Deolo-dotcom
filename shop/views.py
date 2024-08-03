@@ -1,11 +1,9 @@
 from django.shortcuts import render, redirect
-from .models import Product, Category
+from .models import Product, Category, Profile
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
-from .forms import SignUpForm, UpdateUserForm, ChangePasswordForm
-from django import forms
+from .forms import SignUpForm, UpdateUserForm, ChangePasswordForm, UserInfoForm
 
 def home(request):
     products = Product.objects.all()
@@ -45,7 +43,7 @@ def register_user(request):
             user = authenticate(username=username, password=password)
             login(request, user)
             messages.success(request, ('You have been registered!'))
-            return redirect('home')
+            return redirect('update_user')
         else:
             messages.success(request, ('Register request failed! Please try again!'))
             return redirect('register')
@@ -65,6 +63,21 @@ def update_user(request):
     else:
         messages.success(request, 'Update request failed! Make sure you are logged in!')
         return redirect('home')
+    
+def update_info(request):
+    if request.user.is_authenticated:
+        current_user = Profile.objects.get(user__id=request.user.id)
+        form = UserInfoForm(request.POST or None, instance=current_user)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your shipping info has been updated!')
+            return redirect('home')
+        return render(request, 'update_info.html', {'form': form})
+    else:
+        messages.success(request, 'You must be logged in to access page')
+        return redirect('home')
+    
+
     
 def update_password(request):
     if request.user.is_authenticated:
