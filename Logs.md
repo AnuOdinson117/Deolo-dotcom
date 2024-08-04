@@ -71,3 +71,7 @@
 - New User model created at ./shop/models.py.
 - Changes made to admin dashboard via ./shop/admin.py.
 - Migrations for the new Profile model.
+
+### Version 0.11
+- Search Area added.
+- Search can be done on basis of Title of Product or its description.

@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.models import User
 from .forms import SignUpForm, UpdateUserForm, ChangePasswordForm, UserInfoForm
+from django.db.models import Q
 
 def home(request):
     products = Product.objects.all()
@@ -116,3 +117,15 @@ def category(request, var):
 def category_summary(request):
     categories = Category.objects.all()
     return render(request, 'category_summary.html', {'categories': categories})
+
+def search(request):
+    if request.method == 'POST':
+        searched = request.POST['searched']
+        searched = Product.objects.filter(Q(name__icontains=searched) | Q(description__icontains=searched))
+        if not searched:
+            messages.success(request, 'Product not in our stocks')
+            return render(request, 'search.html', {})
+        else:
+            return render(request, 'search.html', {'searched': searched})
+    else:
+        return render(request, 'search.html', {})
