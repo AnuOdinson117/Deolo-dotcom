@@ -1,8 +1,9 @@
-from shop.models import Product
+from shop.models import Product, Profile
 
 class Cart():
     def __init__(self, request):
         self.session = request.session
+        self.request = request
         cart = self.session.get('session_key')
         if 'session_key' not in request.session:
             cart = self.session['session_key'] = {}
@@ -16,6 +17,25 @@ class Cart():
         else:
             self.cart[product_id] = int(product_quantity)
         self.session.modified = True
+        if self.request.user.is_authenticated:
+            current_user = Profile.objects.filter(user__id=self.request.user.id)
+            kart = str(self.cart)
+            kart = kart.replace('\'', '\"')
+            current_user.update(old_cart=str(kart))
+
+    def db_add(self, product, quantity):
+        product_id = str(product)
+        product_quantity = str(quantity)
+        if product_id in self.cart:
+            pass
+        else:
+            self.cart[product_id] = int(product_quantity)
+        self.session.modified = True
+        if self.request.user.is_authenticated:
+            current_user = Profile.objects.filter(user__id=self.request.user.id)
+            kart = str(self.cart)
+            kart = kart.replace('\'', '\"')
+            current_user.update(old_cart=str(kart))
 
     def cart_total(self):
         product_ids = self.cart.keys()
@@ -50,6 +70,11 @@ class Cart():
         ourcart = self.cart
         ourcart[product_id] = product_quantity
         self.session.modified = True
+        if self.request.user.is_authenticated:
+            current_user = Profile.objects.filter(user__id=self.request.user.id)
+            kart = str(self.cart)
+            kart = kart.replace('\'', '\"')
+            current_user.update(old_cart=str(kart))
         stuff = self.cart
         return stuff
     
@@ -58,3 +83,8 @@ class Cart():
         if product_id in self.cart:
             del self.cart[product_id]
         self.session.modified = True
+        if self.request.user.is_authenticated:
+            current_user = Profile.objects.filter(user__id=self.request.user.id)
+            kart = str(self.cart)
+            kart = kart.replace('\'', '\"')
+            current_user.update(old_cart=str(kart))

@@ -12,10 +12,10 @@
                 {% if user.is_authenticated %}
                 <li class="nav-item dropdown">
                     <a style="font-size: 1.2rem;" class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Profile </a>
-                    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item text-light" href="{% url "update_user" %}"> Update User Info </a></li>
+                    <ul class="dropdown-menu bg-black" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item text-light" href="{% url "update_user" %}" onmouseover="this.style.backgroundColor='rgb(33,37,41)';" onmouseout="this.style.backgroundColor='';"> Update User Info </a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item text-light" href="{% url 'update_info' %}"> Update Address </a></li>
+                        <li><a class="dropdown-item text-light" href="{% url 'update_info' %}" onmouseover="this.style.backgroundColor='rgb(33,37,41)';" onmouseout="this.style.backgroundColor='';"> Update Address </a></li>
                     </ul>
                 </li>
                 <li class="nav-item"><a style="font-size: 1.2rem;" class="nav-link" href="{% url "logout" %}"> Sign Out </a></li>
@@ -26,10 +26,10 @@
                 
                 <li class="nav-item dropdown">
                     <a style="font-size: 1.2rem;" class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item text-light" href="{% url "category_summary" %}"> See All </a></li>
+                    <ul class="dropdown-menu bg-black" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item text-light" href="{% url "category_summary" %}" onmouseover="this.style.backgroundColor='rgb(33,37,41)';" onmouseout="this.style.backgroundColor='';"> See All </a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item text-light" href="{% url "category" 'Book' %}"> Book </a></li>
+                        <li><a class="dropdown-item text-light" href="{% url "category" 'Book' %}" onmouseover="this.style.backgroundColor='rgb(33,37,41)';" onmouseout="this.style.backgroundColor='';"> Book </a></li>
                     </ul>
                 </li>
 

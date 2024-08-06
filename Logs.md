@@ -79,3 +79,10 @@
 ### Version 0.12
 - Theme and colors update.
 - Shifted to dark colors.
+
+### Version 0.13
+- Cart Persistance system enhancements.
+- User on logging out will retain the same things in the cart and will not be lost.
+- Changes made to add function, delete functiona and update function.
+- Adding Deleting and Updating will retain changes.
+- Old Cart items stored in database as string off and on conversion to dictionary.
