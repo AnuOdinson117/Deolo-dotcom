@@ -75,3 +75,7 @@
 ### Version 0.11
 - Search Area added.
 - Search can be done on basis of Title of Product or its description.
+
+### Version 0.12
+- Theme and colors update.
+- Shifted to dark colors.

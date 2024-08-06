@@ -10,7 +10,7 @@
                 {% if product.is_sale %}
 
                     <div class="col mb-5">
-                        <div class="card h-100">
+                        <div class="card h-100 bg-dark">
                             <p style="background: green; color: white; font-weight: bold; text-align: center; margin: 0;"> SALE!! </p>
                             <img class="card-img-top" src="{{ product.image.url }}" alt="..." />
                             <div class="card-body p-4">
@@ -29,7 +29,7 @@
                 {% else %}
 
                     <div class="col mb-5">
-                        <div class="card h-100">
+                        <div class="card h-100 bg-dark">
                             <img class="card-img-top" src="{{ product.image.url }}" alt="..." />
                             <div class="card-body p-4">
                                 <div class="text-center">

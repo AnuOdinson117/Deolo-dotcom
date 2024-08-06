@@ -20,7 +20,7 @@
                         {% if product.is_sale %}
 
                             <div class="col mb-5">
-                                <div class="card h-100">
+                                <div class="card h-100 bg-dark">
                                     <p style="background: green; color: white; font-weight: bold; text-align: center; margin: 0;"> SALE!! </p>
                                     <img class="card-img-top" src="{{ product.image.url }}" alt="..." />
                                     <div class="card-body p-4">
@@ -31,7 +31,7 @@
                                         </div>
                                     </div>
                                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url "product" product.id %}">View</a></div>
+                                        <div class="text-center"><a class="btn btn-outline-light mt-auto" href="{% url "product" product.id %}">View</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -39,7 +39,7 @@
                         {% else %}
 
                             <div class="col mb-5">
-                                <div class="card h-100">
+                                <div class="card h-100 bg-dark">
                                     <img class="card-img-top" src="{{ product.image.url }}" alt="..." />
                                     <div class="card-body p-4">
                                         <div class="text-center">
@@ -49,7 +49,7 @@
                                         </div>
                                     </div>
                                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url "product" product.id %}"> View </a></div>
+                                        <div class="text-center"><a class="btn btn-outline-light mt-auto" href="{% url "product" product.id %}"> View </a></div>
                                     </div>
                                 </div>
                             </div>

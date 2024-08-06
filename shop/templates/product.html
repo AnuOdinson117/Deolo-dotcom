@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block content %}
 
 <div class="container">
-  <div class="card mb-3">
+  <div class="card mb-3 bg-dark">
     <div class="row g-0">
       <div class="col-md-2">
         {% if product.is_sale %}
@@ -44,7 +44,7 @@
           <div class="row justify-content-center">
             <div class="col-md-2"> Quantity: </div>
             <div class="col-md-2">
-              <select class="form-select form-select-sm" id="quantity-cart">
+              <select class="form-select form-select-sm bg-dark text-light" id="quantity-cart">
                 
                 <option value="1">1</option>
                 <option value="2">2</option>
